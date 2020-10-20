@@ -38,6 +38,7 @@
 		4AA9CDA7253AAA9B0085107B /* envObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9CDA6253AAA9B0085107B /* envObj.swift */; };
 		4AA9CDA9253AAC980085107B /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9CDA8253AAC980085107B /* MessageViewModel.swift */; };
 		4AA9CDAB253AAF880085107B /* ThemaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9CDAA253AAF880085107B /* ThemaEntity.swift */; };
+		8B9A563E253EE71D00984A5F /* ThemaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A563D253EE71D00984A5F /* ThemaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		4AA9CDA6253AAA9B0085107B /* envObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = envObj.swift; sourceTree = "<group>"; };
 		4AA9CDA8253AAC980085107B /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		4AA9CDAA253AAF880085107B /* ThemaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemaEntity.swift; sourceTree = "<group>"; };
+		8B9A563D253EE71D00984A5F /* ThemaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				4AA9CD9B253AA31C0085107B /* ViewModel */,
 				4AA9CD5725371DF40085107B /* SceneDelegate.swift */,
 				4AA9CD5925371DF40085107B /* ContentView.swift */,
+				8B9A563D253EE71D00984A5F /* ThemaView.swift */,
 				4AA9CD87253886500085107B /* UIApplication+endEditing.swift */,
 				4AA9CD8F253992A20085107B /* PostView.swift */,
 				4AA9CD8525371E310085107B /* EditView.swift */,
@@ -371,6 +374,7 @@
 				4A242993253AD41D00300EAC /* fetchData.swift in Sources */,
 				4AA9CD8625371E310085107B /* EditView.swift in Sources */,
 				4AA9CDA3253AA8A30085107B /* Load.swift in Sources */,
+				8B9A563E253EE71D00984A5F /* ThemaView.swift in Sources */,
 				4AA9CD8C253989620085107B /* MessageListView.swift in Sources */,
 				4AA9CD9425399CEF0085107B /* RandomColor.swift in Sources */,
 				4AA9CDA9253AAC980085107B /* MessageViewModel.swift in Sources */,
