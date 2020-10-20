@@ -39,6 +39,7 @@
 		4AA9CDA9253AAC980085107B /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9CDA8253AAC980085107B /* MessageViewModel.swift */; };
 		4AA9CDAB253AAF880085107B /* ThemaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9CDAA253AAF880085107B /* ThemaEntity.swift */; };
 		8B9A563E253EE71D00984A5F /* ThemaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A563D253EE71D00984A5F /* ThemaView.swift */; };
+		8B9A5640253EEA9000984A5F /* MessageBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A563F253EEA9000984A5F /* MessageBoxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		4AA9CDA8253AAC980085107B /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		4AA9CDAA253AAF880085107B /* ThemaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemaEntity.swift; sourceTree = "<group>"; };
 		8B9A563D253EE71D00984A5F /* ThemaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemaView.swift; sourceTree = "<group>"; };
+		8B9A563F253EEA9000984A5F /* MessageBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				4AA9CD87253886500085107B /* UIApplication+endEditing.swift */,
 				4AA9CD8F253992A20085107B /* PostView.swift */,
 				4AA9CD8525371E310085107B /* EditView.swift */,
+				8B9A563F253EEA9000984A5F /* MessageBoxView.swift */,
 				4AA9CD8B253989620085107B /* MessageListView.swift */,
 				4AA9CD8D253989750085107B /* MessageView.swift */,
 				4AA9CD9125399A5A0085107B /* RandomText.swift */,
@@ -366,6 +369,7 @@
 			files = (
 				4AA9CD5625371DF40085107B /* AppDelegate.swift in Sources */,
 				4AA9CDA5253AA96E0085107B /* fetchThema.swift in Sources */,
+				8B9A5640253EEA9000984A5F /* MessageBoxView.swift in Sources */,
 				4AA9CD88253886500085107B /* UIApplication+endEditing.swift in Sources */,
 				4AA9CDAB253AAF880085107B /* ThemaEntity.swift in Sources */,
 				4AA9CD90253992A20085107B /* PostView.swift in Sources */,
