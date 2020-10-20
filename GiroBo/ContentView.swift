@@ -23,42 +23,13 @@ struct ContentView: View {
                 ZStack {
                     VStack {
                         Spacer()
-                        HStack {
-                            Text("テーマ:")
-                            Text(self.viewModel.themaEntity?.thema ?? "")
-                            .font(.title)
-                                
-                        }
+                        self.createThemaView();
                         Spacer(minLength: 50)
-                        VStack {
-                            MessageListView(messageList:
-                                self.$viewModel.messageList)
-                        
-                            Spacer().frame(width: 0, height: 30, alignment: .center)
-                            HStack {
-                                Button(action: {
-                                    self.isPresentPostSheet = true
-                                }) {
-                                    Text("投稿する")
-                                }
-                            }
-                            Spacer()
-                        }
+                        self.createMessageBox()
                     }
                     .navigationBarTitle(
                         Text(""))
-                    ProfileView(profileViewModel: self.profileViewModel)
-                        .frame(width:geometry.size.width * 1)
-                        .offset(x: -( geometry.size.width +  self.profileOffset))
-                        .animation(.default)
-                        .onAppear {
-                            self.closeProfileOffset = -10
-                            self.openProfileOffset  = geometry.size.width * -1
-                            self.profileOffset = self.closeProfileOffset
-                        }
-                        .onTapGesture {
-                            self.toggleProfile()
-                    }
+                    self.createProfile(geometry: geometry)
                 }
             }
         }.sheet(isPresented: $isPresentPostSheet, content: {PostView(showModal: self.$isPresentPostSheet, messageText: self.$messageText)})
@@ -68,11 +39,53 @@ struct ContentView: View {
         }
     }
     
+    func createThemaView() -> some View {
+        return HStack {
+            Text("テーマ:")
+            Text(self.viewModel.themaEntity?.thema ?? "")
+            .font(.title)
+                
+        }
+    }
+    
+    func createMessageBox() -> some View {
+        return VStack {
+             MessageListView(messageList:
+                 self.$viewModel.messageList)
+         
+             Spacer().frame(width: 0, height: 30, alignment: .center)
+             HStack {
+                 Button(action: {
+                     self.isPresentPostSheet = true
+                 }) {
+                     Text("投稿する")
+                 }
+             }
+             Spacer()
+         }
+    }
+
+    
     func toggleProfile() {
         if self.profileOffset == self.closeProfileOffset {
             self.profileOffset = self.openProfileOffset
         } else {
             self.profileOffset = self.closeProfileOffset
+        }
+    }
+    
+    func createProfile(geometry:GeometryProxy) -> some View {
+        return ProfileView(profileViewModel: self.profileViewModel)
+            .frame(width:geometry.size.width * 1)
+            .offset(x: -( geometry.size.width +  self.profileOffset))
+            .animation(.default)
+            .onAppear {
+                self.closeProfileOffset = -10
+                self.openProfileOffset  = geometry.size.width * -1
+                self.profileOffset = self.closeProfileOffset
+            }
+            .onTapGesture {
+                self.toggleProfile()
         }
     }
 }
