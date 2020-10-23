@@ -25,7 +25,7 @@ struct ContentView: View {
                         Spacer()
                         ThemaView(text: self.viewModel.themaEntity?.thema)
                         Spacer(minLength: 50)
-                        MessageBoxView(messageList: self.$viewModel.messageList, isPresentPostSheet: self.$isPresentPostSheet)
+                        self.createMessageBox()
                     }
                     .navigationBarTitle(
                         Text(""))
@@ -38,6 +38,24 @@ struct ContentView: View {
             self.profileViewModel.onAppeared()
         }
     }
+    
+    func createMessageBox() -> some View {
+        return VStack {
+             MessageListView(messageList:
+                 self.$viewModel.messageList)
+         
+             Spacer().frame(width: 0, height: 30, alignment: .center)
+             HStack {
+                 Button(action: {
+                     self.isPresentPostSheet = true
+                 }) {
+                     Text("投稿する")
+                 }
+             }
+             Spacer()
+         }
+    }
+
     
     func toggleProfile() {
         if self.profileOffset == self.closeProfileOffset {
