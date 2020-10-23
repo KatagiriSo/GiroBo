@@ -15,7 +15,9 @@ class MessageViewModel : ObservableObject {
     @Published var messageList:[Message] = []
     @Published private(set) var error:Error? = nil
     var cancels = [AnyCancellable]()
+    
     func onAppeared() {
+        // テーマ取得
         fetchThema(isTest: true)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { result in

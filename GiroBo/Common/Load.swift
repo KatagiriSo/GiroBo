@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 
+// 非同期型
 func load<T:Decodable>(_ filename:String) -> AnyPublisher<T, Error> {
     let data:Data
     
@@ -33,6 +34,7 @@ func load<T:Decodable>(_ filename:String) -> AnyPublisher<T, Error> {
     }
 }
 
+// 同期型
 func loadSync<T:Decodable>(_ filename:String) throws -> T {
     let data:Data
        

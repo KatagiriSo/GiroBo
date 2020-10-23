@@ -9,16 +9,17 @@
 import SwiftUI
 
 struct MessageView: View {
-    @State var name:String = "佐藤一郎"
-    @State var message:String = "いろいろ考えたけど、そういうことじゃないんじゃないかなとおもうんだよね。"
+    @State var name:String
+    @State var message:String
     @State var nameBGColor:Color = Color.green
+    @State var nameKey:String = "名前"
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
 //            Divider().padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
             HStack{
                 ZStack {
                     nameBGColor
-                    Text("名前").foregroundColor(Color.black)
+                    Text(self.nameKey).foregroundColor(Color.black)
                 }.fixedSize(horizontal: true, vertical: true)
                 Spacer()
                     .frame(width: 10.0)
@@ -32,10 +33,13 @@ struct MessageView: View {
         }.padding(EdgeInsets(top: 0,leading: 30,bottom: 0,trailing: 30))
 
     }
+    func nameKey(_ name:String) -> MessageView {
+        return MessageView(name: self.name, message: self.message, nameBGColor: self.nameBGColor, nameKey: name)
+    }
 }
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView()
+        MessageView(name: "佐藤一郎", message:"いろいろ考えたけど、そういうことじゃないんじゃないかなとおもうんだよね。")
     }
 }

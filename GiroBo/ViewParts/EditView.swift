@@ -53,7 +53,9 @@ class Coordinator: NSObject, UITextViewDelegate {
 }
 
 struct EditView_Previews: PreviewProvider {
+    @State static var text:String = "text"
+    @State static var textStyle:UIFont.TextStyle = UIFont.TextStyle.body
     static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+        EditView(text:self.$text, textStyle:self.$textStyle)
     }
 }
