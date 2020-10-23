@@ -14,7 +14,6 @@ struct ContentView: View {
     @State var closeProfileOffset: CGFloat = -10
     @State var openProfileOffset: CGFloat = -100
     @State var profileOffset: CGFloat = -10
-    @State var messageText:String = ""
     @ObservedObject var viewModel:MessageViewModel
     @ObservedObject var profileViewModel:ProfileViewModel
     var body: some View {
@@ -61,7 +60,7 @@ struct ContentView: View {
                     }
                 }
             }
-        }.sheet(isPresented: $isPresentPostSheet, content: {PostView(showModal: self.$isPresentPostSheet, messageText: self.$messageText)})
+        }.sheet(isPresented: $isPresentPostSheet, content: {PostView(showModal: self.$isPresentPostSheet)})
         .onAppear() {
             self.viewModel.onAppeared()
             self.profileViewModel.onAppeared()

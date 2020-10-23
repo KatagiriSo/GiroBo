@@ -11,7 +11,7 @@ import Combine
 
 struct PostView: View {
     @Binding var showModal:Bool
-    @Binding var messageText: String
+    @State private var message = ""
     @State private var textStyle = UIFont.TextStyle.body
     
     var body: some View {
@@ -20,7 +20,7 @@ struct PostView: View {
             VStack {
                 HStack {
                     Spacer(minLength: 20)
-                    EditView(text: $messageText, textStyle: $textStyle).border(Color.black, width: 1)
+                    EditView(text: $message, textStyle: $textStyle).border(Color.black, width: 1)
                     Spacer(minLength: 20)
                 }
             }
@@ -42,10 +42,8 @@ struct PostView: View {
 }
 
 struct PostView_Previews: PreviewProvider {
-    @State static var showModal:Bool = true
-    @State static var message:String = ""
+    @State static  var showModal:Bool = true
     static var previews: some View {
-        PostView(showModal: self.$showModal,
-                 messageText: self.$message)
+        PostView(showModal: self.$showModal)
     }
 }
