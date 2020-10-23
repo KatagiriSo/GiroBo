@@ -23,7 +23,7 @@ struct ContentView: View {
                 ZStack {
                     VStack {
                         Spacer()
-                        ThemaView(text: self.viewModel.themaEntity?.thema)
+                        self.createThemaView();
                         Spacer(minLength: 50)
                         self.createMessageBox()
                     }
@@ -36,6 +36,15 @@ struct ContentView: View {
         .onAppear() {
             self.viewModel.onAppeared()
             self.profileViewModel.onAppeared()
+        }
+    }
+    
+    func createThemaView() -> some View {
+        return HStack {
+            Text("テーマ:")
+            Text(self.viewModel.themaEntity?.thema ?? "")
+            .font(.title)
+                
         }
     }
     
