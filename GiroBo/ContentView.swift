@@ -11,69 +11,49 @@ import Combine
 
 struct ContentView: View {
     @State var isPresentPostSheet: Bool = false
-    @State var closeProfileOffset: CGFloat = -10
-    @State var openProfileOffset: CGFloat = -100
-    @State var profileOffset: CGFloat = -10
     @ObservedObject var viewModel:MessageViewModel
     @ObservedObject var profileViewModel:ProfileViewModel
+    
     var body: some View {
-        GeometryReader { geometry in
-            NavigationView {
-                ZStack {
-                    VStack {
-                        Spacer()
-                        HStack {
-                            Text("テーマ:")
-                            Text(self.viewModel.themaEntity?.thema ?? "")
-                            .font(.title)
-                                
-                        }
-                        Spacer(minLength: 50)
-                        VStack {
-                            MessageListView(messageList:
-                                self.$viewModel.messageList)
-                        
-                            Spacer().frame(width: 0, height: 30, alignment: .center)
-                            HStack {
-                                Button(action: {
-                                    self.isPresentPostSheet = true
-                                }) {
-                                    Text("投稿する")
-                                }
-                            }
-                            Spacer()
-                        }
-                    }
-                    .navigationBarTitle(
-                        Text(""))
-                    ProfileView(profileViewModel: self.profileViewModel)
-                        .frame(width:geometry.size.width * 1)
-                        .offset(x: -( geometry.size.width +  self.profileOffset))
-                        .animation(.default)
-                        .onAppear {
-                            self.closeProfileOffset = -10
-                            self.openProfileOffset  = geometry.size.width * -1
-                            self.profileOffset = self.closeProfileOffset
-                        }
-                        .onTapGesture {
-                            self.toggleProfile()
-                    }
-                }
-            }
-        }.sheet(isPresented: $isPresentPostSheet, content: {PostView(showModal: self.$isPresentPostSheet)})
+        mainContentView().sideView(animation: .spring()) {
+            ProfileView(profileViewModel: self.profileViewModel)
+        }
+        .sheet(isPresented: $isPresentPostSheet, content: {PostView(showModal: self.$isPresentPostSheet)})
         .onAppear() {
-            self.viewModel.onAppeared()
-            self.profileViewModel.onAppeared()
+                self.viewModel.onAppeared()
+                self.profileViewModel.onAppeared()
         }
     }
     
-    func toggleProfile() {
-        if self.profileOffset == self.closeProfileOffset {
-            self.profileOffset = self.openProfileOffset
-        } else {
-            self.profileOffset = self.closeProfileOffset
+    fileprivate func mainContentView() -> some View {
+        return VStack {
+            Spacer()
+            HStack {
+                Text("テーマ:")
+                Text(self.viewModel.themaEntity?.thema ?? "")
+                    .font(.title)
+                
+            }
+            Spacer(minLength: 50)
+            VStack {
+                MessageListView(messageList:
+                    self.$viewModel.messageList)
+                
+                Spacer().frame(width: 0, height: 30, alignment: .center)
+                HStack {
+                    Button(action: {
+                        self.isPresentPostSheet = true
+                    }) {
+                        Text("投稿する")
+                    }
+                }
+                Spacer()
+            }
         }
+        .navigationBarTitle(
+            Text(""))
     }
+    
 }
 
 

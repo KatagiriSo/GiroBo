@@ -16,6 +16,7 @@ class ProfileViewModel : ObservableObject {
     @Published private(set) var error:Error? = nil
     
     func onAppeared() {
+        // プロフィール取得
         fetchProfile(isTest: true)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { result in
