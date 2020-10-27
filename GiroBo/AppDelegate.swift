@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Combine
+
+var cancellables = [AnyCancellable]()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +23,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print("Family: \(family) Font names: \(names)")
 //            print(dummyEntity().messageList.debugDescription)
 //        }
+        
+//        fetchDataTest(urlstr: "https://qiita.com/api/v2/items")
+        fetchDataTest(urlstr: "http://katagiriso.local:3000/api/v1/user")
+                   .sink(receiveCompletion: { (comp) in
+                       switch comp {
+                       case .failure(let e):
+                           print(e)
+                           break
+                       case .finished:
+                           print("finished")
+                           break
+                       }
+                   }) { (res) in
+                       print(res!)
+        }.store(in: &cancellables)
         return true
     }
 

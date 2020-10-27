@@ -17,7 +17,7 @@ class ProfileViewModel : ObservableObject {
     
     func onAppeared() {
         // プロフィール取得
-        fetchProfile(isTest: true)
+        fetchProfile()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { result in
                 switch result {

@@ -40,6 +40,9 @@
 		4AA9CDA7253AAA9B0085107B /* envObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9CDA6253AAA9B0085107B /* envObj.swift */; };
 		4AA9CDA9253AAC980085107B /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9CDA8253AAC980085107B /* MessageViewModel.swift */; };
 		4AA9CDAB253AAF880085107B /* ThemaEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9CDAA253AAF880085107B /* ThemaEntity.swift */; };
+		4AD5252B25480109001628B3 /* fetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A242992253AD41D00300EAC /* fetchData.swift */; };
+		4AD5252C2548023A001628B3 /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9CDA2253AA8A30085107B /* Load.swift */; };
+		4AD5252E2548120F001628B3 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD5252D2548120F001628B3 /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,7 @@
 		4AA9CDA6253AAA9B0085107B /* envObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = envObj.swift; sourceTree = "<group>"; };
 		4AA9CDA8253AAC980085107B /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		4AA9CDAA253AAF880085107B /* ThemaEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemaEntity.swift; sourceTree = "<group>"; };
+		4AD5252D2548120F001628B3 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +247,7 @@
 			children = (
 				4AA9CDA4253AA96E0085107B /* fetchThema.swift */,
 				4AA9CDA6253AAA9B0085107B /* envObj.swift */,
+				4AD5252D2548120F001628B3 /* Const.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 				4AA9CD88253886500085107B /* UIApplication+endEditing.swift in Sources */,
 				4AA9CDAB253AAF880085107B /* ThemaEntity.swift in Sources */,
 				4AA9CD90253992A20085107B /* PostView.swift in Sources */,
+				4AD5252E2548120F001628B3 /* Const.swift in Sources */,
 				4AA9CD5825371DF40085107B /* SceneDelegate.swift in Sources */,
 				4A242995253AD69900300EAC /* ProfileViewModel.swift in Sources */,
 				4A743B8F2542C4270093380B /* ViewWithSideView.swift in Sources */,
@@ -413,6 +419,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD5252B25480109001628B3 /* fetchData.swift in Sources */,
+				4AD5252C2548023A001628B3 /* Load.swift in Sources */,
 				4AA9CD6D25371DF70085107B /* GiroBoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +514,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -559,6 +568,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -583,6 +593,7 @@
 				PRODUCT_NAME = GiroBo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_SETTING_API_URL = "";
 			};
 			name = Debug;
 		};
@@ -603,6 +614,7 @@
 				PRODUCT_NAME = GiroBo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_SETTING_API_URL = "";
 			};
 			name = Release;
 		};
@@ -690,6 +702,127 @@
 			};
 			name = Release;
 		};
+		4AD5252F2548175C001628B3 /* Mock */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "MOCK=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DMOCK";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Mock;
+		};
+		4AD525302548175C001628B3 /* Mock */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"GiroBo/Preview Content\"";
+				DEVELOPMENT_TEAM = X3PWB686N6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = GiroBo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.rodhos.GiroBo;
+				PRODUCT_NAME = GiroBo;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_SETTING_API_URL = "";
+			};
+			name = Mock;
+		};
+		4AD525312548175C001628B3 /* Mock */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X3PWB686N6;
+				INFOPLIST_FILE = GiroBoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.rodhos.GiroBoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GiroBo.app/GiroBo";
+			};
+			name = Mock;
+		};
+		4AD525322548175C001628B3 /* Mock */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X3PWB686N6;
+				INFOPLIST_FILE = GiroBoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = info.rodhos.GiroBoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GiroBo;
+			};
+			name = Mock;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -697,6 +830,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4AA9CD7A25371DF70085107B /* Debug */,
+				4AD5252F2548175C001628B3 /* Mock */,
 				4AA9CD7B25371DF70085107B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -706,6 +840,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4AA9CD7D25371DF70085107B /* Debug */,
+				4AD525302548175C001628B3 /* Mock */,
 				4AA9CD7E25371DF70085107B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -715,6 +850,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4AA9CD8025371DF70085107B /* Debug */,
+				4AD525312548175C001628B3 /* Mock */,
 				4AA9CD8125371DF70085107B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -724,6 +860,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4AA9CD8325371DF70085107B /* Debug */,
+				4AD525322548175C001628B3 /* Mock */,
 				4AA9CD8425371DF70085107B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

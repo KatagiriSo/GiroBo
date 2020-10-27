@@ -25,6 +25,22 @@ class GiroBoTests: XCTestCase {
 //        print(dummyEntity().messageList.debugDescription)
     }
     
+    func testFetchData() throws {
+        let _ = fetchDataTest(urlstr: "https://qiita.com/api/v2/items")
+            .sink(receiveCompletion: { (comp) in
+                switch comp {
+                case .failure(let e):
+                    print(e)
+                    break
+                case .finished:
+                    print("finished")
+                    break
+                }
+            }) { (res) in
+                print(res!)
+        }
+    }
+    
     func testDummyEntity() throws {
         XCTAssert(dummyEntity().messageList.count > 0)
     }

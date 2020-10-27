@@ -18,7 +18,7 @@ class MessageViewModel : ObservableObject {
     
     func onAppeared() {
         // テーマ取得
-        fetchThema(isTest: true)
+        fetchThema()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { result in
                 switch result {
